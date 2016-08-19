@@ -47,6 +47,7 @@ public class Graphisme {
 			this.drawPiece(p);
 		}
 	}
+	
 
 	public void drawCoordonnees(ArrayList<Coordonnee> coor){
 		for (Coordonnee c : coor) {

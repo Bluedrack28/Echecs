@@ -2,7 +2,7 @@ package Game;
 
 public class Coordonnee  {
 
-	int x,y;
+	public int x,y;
 	
 	public Coordonnee(int coordonneeX,int coordonneeY){
 		x = coordonneeX;
@@ -16,6 +16,14 @@ public class Coordonnee  {
 	
 	public int getY(){
 		return y;
+	}
+	public boolean isInTheCheesBoard(){
+		if(this.y > 7 || this.x > 7|| this.y < 0 || this.x < 0){
+			return false;
+		}
+		else{
+			return true;
+		}
 	}
 	
 	

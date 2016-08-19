@@ -1,21 +1,28 @@
 package Main;
 
 import java.awt.Graphics;
+import java.awt.MouseInfo;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 import Game.Cheval;
+import Game.Echiquier;
 import Game.Fou;
 import Game.Piece;
 import Game.Pion;
+import Game.Reine;
+import Game.Roi;
 import Game.Tour;
 
 public class Panel extends JPanel{
 	
 	private Graphics gr;
-	Cheval p = new Cheval(7,7,false);
-	
+	Reine p = new Reine(4,4,true);
+	int MouseX;
+	int MouseY;
 	public Panel(){
 		
 		Pion p = new Pion(1,100,true);
@@ -23,10 +30,15 @@ public class Panel extends JPanel{
 	}
 
 	public void paintComponent(Graphics g){
-
+		
+		
+		Echiquier echec = new Echiquier();
+		echec.resetEchiquiquer();
 		Graphisme graph = new Graphisme(g);
+		
 		graph.drawEchiquier();
-		graph.drawCoordonnees(p.possibleMove());
-		graph.drawPiece(p);
+		graph.drawPiece(echec.getPiece(4,3));
+		
 	}
+	
 }

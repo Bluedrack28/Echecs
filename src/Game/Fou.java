@@ -21,7 +21,18 @@ public class Fou extends Piece{
 		// TODO Auto-generated method stub
 		ArrayList<Coordonnee> coor = new ArrayList<Coordonnee>();
 		
-		
+		for (int i =0; i < this.x; i++) {
+			coor.add(new Coordonnee(this.x-i-1,this.y-i-1));
+		}
+		for (int i = 0; i < 7-this.y; i++) {
+			coor.add(new Coordonnee(this.x+i+1,this.y+i+1));
+		}
+		for (int i = 0; i < 7-this.x; i++) {
+			coor.add(new Coordonnee(this.x+i+1,this.y-i-1));
+		}
+		for (int i = 0; i < 7-this.y; i++) {
+			coor.add(new Coordonnee(this.x-i-1,this.y+i+1));
+		}
 		
 		return coor;
 	}

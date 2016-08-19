@@ -24,7 +24,12 @@ public abstract class Piece extends Coordonnee{
 	}
 	
 	public void mourir(){
-		
+		try {
+			this.finalize();
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public abstract ArrayList<Coordonnee> possibleMove();

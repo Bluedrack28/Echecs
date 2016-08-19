@@ -16,11 +16,29 @@ public class Roi extends Piece{
 		else return "pieces/nRoi.png";
 	}
 
-
 	@Override
 	public ArrayList<Coordonnee> possibleMove() {
-		// TODO Auto-generated method stub	
-		return null;
+		// TODO Auto-generated method stub
+		ArrayList<Coordonnee> coor = new ArrayList<Coordonnee>();
+		
+		coor.add(new Coordonnee(this.x+1,this.y+1));
+		coor.add(new Coordonnee(this.x,this.y+1));
+		coor.add(new Coordonnee(this.x,this.y-1));
+		coor.add(new Coordonnee(this.x-1,this.y));
+		coor.add(new Coordonnee(this.x+1,this.y));
+		coor.add(new Coordonnee(this.x-1,this.y-1));
+		coor.add(new Coordonnee(this.x-1,this.y+1));
+		coor.add(new Coordonnee(this.x+1,this.y+1));
+		coor.add(new Coordonnee(this.x+1,this.y-1));
+		
+		for (int i = 0; i < coor.size(); i++) {
+			if(!coor.get(i).isInTheCheesBoard()){
+				coor.remove(i);
+				i--;
+			}
+		}
+		
+		return coor;
 	}
 
 }

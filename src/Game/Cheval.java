@@ -29,7 +29,14 @@ public class Cheval extends Piece{
 		coor.add(new Coordonnee(this.x+1,this.y-2));
 		coor.add(new Coordonnee(this.x-1,this.y+2));
 		coor.add(new Coordonnee(this.x-1,this.y-2));
-
+		
+		for (int i = 0; i < coor.size(); i++) {
+			if(!coor.get(i).isInTheCheesBoard()){
+				coor.remove(i);
+				i--;
+			}
+		}
+		
 		return coor;
 	}
 
