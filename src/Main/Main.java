@@ -17,4 +17,6 @@ public class Main {
 		frame.setContentPane(panel);
 		frame.setVisible(true);
 	}
+	
+
 }

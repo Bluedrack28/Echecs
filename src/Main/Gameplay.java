@@ -1,6 +1,6 @@
 package Main;
 
-public class Gameplay {
+public class Gameplay{
 
 	
 }

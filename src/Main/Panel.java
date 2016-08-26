@@ -23,10 +23,11 @@ public class Panel extends JPanel{
 	Reine p = new Reine(4,4,true);
 	int MouseX;
 	int MouseY;
+	public Gameplay game;
 	public Panel(){
 		
 		Pion p = new Pion(1,100,true);
-	
+		
 	}
 
 	public void paintComponent(Graphics g){
@@ -37,8 +38,10 @@ public class Panel extends JPanel{
 		Graphisme graph = new Graphisme(g);
 		
 		graph.drawEchiquier();
-		graph.drawPiece(echec.getPiece(4,3));
-		
+		if(echec.isHereAPiece(1, 1))graph.drawPiece(echec.getPiece(1,1));
+		//graph.drawPiece(echec.getPiece(4,3));
+
 	}
+
 	
 }

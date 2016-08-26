@@ -55,6 +55,17 @@ public class Echiquier{
 	public ArrayList<Piece> getPieces(){	
 		return pieces;
 	}
+	
+	
+	public boolean isHereAPiece(int x,int y){
+		for (Piece p : pieces) {
+			if(p.x == x && p.y == y){
+				 return true;
+			 }
+		}
+		return false;
+	}
+	
 	public Piece getPiece(int x,int y){
 	 for (Piece p : pieces) {
 		 try {
