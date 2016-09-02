@@ -5,10 +5,14 @@ import java.util.ArrayList;
 public class Echiquier{
 	private ArrayList<Piece> pieces;
 	private int[][] g;
-	private Piece[][] p = new Piece[8][8];	
+//	private Piece[][] p = new Piece[8][8];	
+	private Piece pBuffer;
+	
+	
+	private Piece[][] X = new Piece[8][8];
 	
 //	1 = pion
-//	2 = tour
+//	2 = tourzh
 //	3 = cheval
 //	4 = fou
 //	5 = reine
@@ -19,7 +23,6 @@ public class Echiquier{
 		g = new int[8][8];
 		pieces = new ArrayList<Piece>();
 		
-		p[1][2]  = new Tour(1,1,true);
 	}
 	
 	public void resetEchiquiquer(){
@@ -51,11 +54,16 @@ public class Echiquier{
 		}
 	
 	
+	public void addPiece(Piece p){
+		pieces.add(p);
+	}
 	
 	public ArrayList<Piece> getPieces(){	
 		return pieces;
 	}
-	
+	public Piece getBuffer(){
+		return pBuffer;
+	}
 	
 	public boolean isHereAPiece(int x,int y){
 		for (Piece p : pieces) {
@@ -66,18 +74,35 @@ public class Echiquier{
 		return false;
 	}
 	
-	public Piece getPiece(int x,int y){
-	 for (Piece p : pieces) {
-		 try {
-			 if(p.x == x && p.y == y){
-				 return p;
-			 }
-		} catch (Exception e) {
-		
+	public void takePiece(int x,int y){
+		if(this.isHereAPiece(x, y)){
+			for (Piece p : pieces) {
+				if(p.getX() == x && p.getY() == y){
+					pBuffer = p;
+					
+				}
+					
+			}
+			pieces.remove(pBuffer);
 		}
-	}	
-	 return null;	
 	}
+	public boolean isAPossibleMove(ArrayList<Coordonnee> coor,int x,int y) {
+		for (Coordonnee c : coor) {
+			if(c.getX() == x && c.getY() == y){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void movePiece(int x,int y){
+		if(true/*this.isAPossibleMove(pBuffer.possibleMove(), x, y)*/){
+		pBuffer.x = x;
+		pBuffer.y = y;
+		pieces.add(pBuffer);
+		}
+	}
+	
 	
 	
 	

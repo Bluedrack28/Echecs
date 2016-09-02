@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 
 import Game.Cheval;
 import Game.Echiquier;
+import Game.Echiquier2;
 import Game.Fou;
 import Game.Piece;
 import Game.Pion;
@@ -26,21 +27,31 @@ public class Panel extends JPanel{
 	public Gameplay game;
 	public Panel(){
 		
-		Pion p = new Pion(1,100,true);
+		Roi p = new Roi(1,2,true);
 		
 	}
 
 	public void paintComponent(Graphics g){
 		
 		
-		Echiquier echec = new Echiquier();
-		echec.resetEchiquiquer();
-		Graphisme graph = new Graphisme(g);
 		
-		graph.drawEchiquier();
-		if(echec.isHereAPiece(1, 1))graph.drawPiece(echec.getPiece(1,1));
-		//graph.drawPiece(echec.getPiece(4,3));
+		Echiquier echec = new Echiquier();
 
+//		Echiquier echec = new Echiquier();
+//		echec.resetEchiquiquer();
+		Graphisme graph = new Graphisme(g);
+		echec.addPiece(p);
+		echec.takePiece(4, 4);
+		echec.movePiece(0, 0);
+		graph.drawEchiquier();
+//		if(echec.isHereAPiece(1, 1))graph.drawPiece(echec.getPiece(1,1));¨
+		
+		
+		
+		graph.drawPieces(echec.getPieces());
+		
+		
+//		System.out.println();
 	}
 
 	
