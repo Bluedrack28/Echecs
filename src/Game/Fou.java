@@ -36,5 +36,4 @@ public class Fou extends Piece{
 		
 		return coor;
 	}
-
 }

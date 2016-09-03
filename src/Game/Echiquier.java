@@ -2,14 +2,16 @@ package Game;
 
 import java.util.ArrayList;
 
+import javax.sql.rowset.spi.TransactionalWriter;
+
+import Exception.NoPieceException;
+
 public class Echiquier{
-	private ArrayList<Piece> pieces;
-	private int[][] g;
+	public ArrayList<Piece> pieces;
+
 //	private Piece[][] p = new Piece[8][8];	
-	private Piece pBuffer;
+	public Piece pBuffer;
 	
-	
-	private Piece[][] X = new Piece[8][8];
 	
 //	1 = pion
 //	2 = tourzh
@@ -20,7 +22,6 @@ public class Echiquier{
 	
 	
 	public Echiquier(){
-		g = new int[8][8];
 		pieces = new ArrayList<Piece>();
 		
 	}
@@ -74,18 +75,34 @@ public class Echiquier{
 		return false;
 	}
 	
-	public void takePiece(int x,int y){
-		if(this.isHereAPiece(x, y)){
-			for (Piece p : pieces) {
-				if(p.getX() == x && p.getY() == y){
-					pBuffer = p;
-					
-				}
-					
+	public Piece getPiece(int x,int y){
+		for (Piece piece : pieces) {
+			if(piece.getX() == x && piece.getY() == y){
+				return piece;
 			}
-			pieces.remove(pBuffer);
 		}
+		return null;
 	}
+	
+	
+	public void takePiece(int x,int y){
+		
+		pBuffer = null;
+		
+		for (int i = 0; i < pieces.size(); i++) {
+			if(pieces.get(i).getX() == x && pieces.get(i).getY() == y){
+				pBuffer = pieces.get(i);
+				pieces.remove(i);
+			}
+		}
+		
+		if(pBuffer == null){
+			//throw new NoPieceException();
+			System.out.println("problem");
+		}
+		
+	}
+
 	public boolean isAPossibleMove(ArrayList<Coordonnee> coor,int x,int y) {
 		for (Coordonnee c : coor) {
 			if(c.getX() == x && c.getY() == y){
@@ -96,10 +113,17 @@ public class Echiquier{
 	}
 	
 	public void movePiece(int x,int y){
-		if(true/*this.isAPossibleMove(pBuffer.possibleMove(), x, y)*/){
-		pBuffer.x = x;
-		pBuffer.y = y;
-		pieces.add(pBuffer);
+		
+		
+		if(this.isAPossibleMove(pBuffer.possibleMove(), x, y) && this.getPiece(x, y).getCamp() != pBuffer.getCamp()){
+			if(this.getPiece(x, y) != null){
+				pieces.remove(this.getPiece(x, y));
+			}
+			pBuffer.setX(x);
+			pBuffer.setY(y);
+			pieces.add(pBuffer);
+		}else{
+			pieces.add(pBuffer);
 		}
 	}
 	
