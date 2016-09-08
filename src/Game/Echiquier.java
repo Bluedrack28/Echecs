@@ -9,7 +9,7 @@ import Exception.NoPieceException;
 public class Echiquier{
 	public ArrayList<Piece> pieces;
 
-//	private Piece[][] p = new Piece[8][8];	
+	private Piece[][] p = new Piece[8][8];	
 	public Piece pBuffer;
 	
 	
@@ -115,7 +115,7 @@ public class Echiquier{
 	public void movePiece(int x,int y){
 		
 		
-		if(this.isAPossibleMove(pBuffer.possibleMove(), x, y) && this.getPiece(x, y).getCamp() != pBuffer.getCamp()){
+		if(this.isAPossibleMove(pBuffer.possibleMove(), x, y)){
 			if(this.getPiece(x, y) != null){
 				pieces.remove(this.getPiece(x, y));
 			}

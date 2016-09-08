@@ -26,10 +26,10 @@ public class Panel extends JPanel	{
 	int MouseX;
 	int MouseY;
 	public Gameplay game;
-	public Echiquier echec = new Echiquier();
+	public Echiquier2 echec = new Echiquier2();
 	
 	
-	public Panel(Echiquier echiquier ){
+	public Panel(Echiquier2 echiquier ){
 		echec = echiquier;
 		Roi p = new Roi(1,2,true);
 		
@@ -39,7 +39,7 @@ public class Panel extends JPanel	{
 		
 		Graphisme graph = new Graphisme(g);
 		graph.drawEchiquier();
-		graph.drawPieces(echec.getPieces());
+		graph.drawPieces2(echec.getPieces());
 
 	}
 

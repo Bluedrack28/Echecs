@@ -41,7 +41,15 @@ public class Graphisme {
 	public void drawPiece(Piece p){
 		g.drawImage(new ImageIcon(p.getURLImage()).getImage(), p.getX()*100, p.getY()*100, 100 ,100,null);
 	}
-	
+
+	public void drawPieces2(Piece[][] pieces){
+		for (Piece[] p : pieces) {
+			for (Piece piece : p) {
+				if(piece != null) this.drawPiece(piece);
+			}
+			
+		}
+	}
 	public void drawPieces(ArrayList<Piece> pieces){
 		for (Piece p : pieces) {
 			this.drawPiece(p);
