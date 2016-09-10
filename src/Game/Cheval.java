@@ -17,7 +17,7 @@ public class Cheval extends Piece{
 	}
 
 	@Override
-	public ArrayList<Coordonnee> possibleMove() {
+	public ArrayList<Coordonnee> possibleMove(Echiquier2 echec) {
 		// TODO Auto-generated method stub
 		ArrayList<Coordonnee> coor = new ArrayList<Coordonnee>();
 		
@@ -34,6 +34,14 @@ public class Cheval extends Piece{
 			if(!coor.get(i).isInTheCheesBoard()){
 				coor.remove(i);
 				i--;
+			}
+		}
+		for (int i = 0; i < coor.size(); i++) {
+			if(echec.getPiece(coor.get(i).x, coor.get(i).y)!= null){
+				if(echec.getPiece(coor.get(i).x, coor.get(i).y).getCamp() == this.getCamp()){
+					coor.remove(i);
+					i--;
+				}
 			}
 		}
 		

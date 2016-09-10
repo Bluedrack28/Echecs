@@ -17,11 +17,13 @@ public class Roi extends Piece{
 	}
 
 	@Override
-	public ArrayList<Coordonnee> possibleMove() {
+	public ArrayList<Coordonnee> possibleMove(Echiquier2 echec) {
 		// TODO Auto-generated method stub
 		ArrayList<Coordonnee> coor = new ArrayList<Coordonnee>();
-		
+	
 		coor.add(new Coordonnee(this.x+1,this.y+1));
+		
+		
 		coor.add(new Coordonnee(this.x,this.y+1));
 		coor.add(new Coordonnee(this.x,this.y-1));
 		coor.add(new Coordonnee(this.x-1,this.y));
@@ -35,6 +37,14 @@ public class Roi extends Piece{
 			if(!coor.get(i).isInTheCheesBoard()){
 				coor.remove(i);
 				i--;
+			}
+		}
+		for (int i = 0; i < coor.size(); i++) {
+			if(echec.getPiece(coor.get(i).x, coor.get(i).y)!= null){
+				if(echec.getPiece(coor.get(i).x, coor.get(i).y).getCamp() == this.getCamp()){
+					coor.remove(i);
+					i--;
+				}
 			}
 		}
 		

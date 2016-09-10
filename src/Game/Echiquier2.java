@@ -2,7 +2,7 @@ package Game;
 
 public class Echiquier2 {
 
-	private Piece[][] pieces;
+	public Piece[][] pieces;
 	private Piece pBuffer;
 	private boolean turn;
 	
@@ -28,7 +28,7 @@ public class Echiquier2 {
 		
 	}
 	public boolean isAPosibleMove(Piece p,int x,int y){
-		for (Coordonnee c : p.possibleMove()) {
+		for (Coordonnee c : p.possibleMove(this)) {
 			if(c.getX() == x && c.getY() == y) return true;
 		}
 		return false;

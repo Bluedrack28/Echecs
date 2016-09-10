@@ -39,6 +39,8 @@ public class Panel extends JPanel	{
 		
 		Graphisme graph = new Graphisme(g);
 		graph.drawEchiquier();
+		
+		graph.drawCoordonnees(echec.getPiece(4, 4).possibleMove(echec));
 		graph.drawPieces2(echec.getPieces());
 
 	}
