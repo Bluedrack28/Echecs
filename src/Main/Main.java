@@ -22,8 +22,13 @@ public class Main {
 		Echiquier2 echec1 = new Echiquier2();
 		Cheval r = new Cheval(4,4,true);
 		Cheval b = new Cheval(2,3,true);
+		Cheval h = new Cheval(1,2,false);
+
+		echec1.addPiece(h);
 		echec1.addPiece(r);
 		echec1.addPiece(b);
+		echec1.takePiece(4, 4);
+		echec1.movePiece(3, 2);
 		ArrayList<Coordonnee> f = r.possibleMove(echec1);
 		System.out.print(f.size());
 		JFrame frame = new JFrame("Echecs");

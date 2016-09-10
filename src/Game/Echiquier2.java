@@ -20,6 +20,16 @@ public class Echiquier2 {
 	public Piece[][] getPieces(){
 		return pieces;
 	}
+	public boolean canTakeThisPiece(int x,int y,boolean tour){
+		if(this.getPiece(x, y).getCamp() == tour){
+			return true;
+		}else{
+			return false;
+		}
+		
+	}
+	
+	
 	
 	public void takePiece(int x,int y){
 		
