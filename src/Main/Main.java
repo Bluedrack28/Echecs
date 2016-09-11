@@ -6,11 +6,13 @@ import javax.swing.JFrame;
 
 import com.sun.glass.events.MouseEvent;
 
+import Exception.NoPieceException;
 import Game.Cheval;
 import Game.Coordonnee;
 import Game.Echiquier;
 import Game.Echiquier2;
 import Game.Fou;
+import Game.Player;
 import Game.Reine;
 import Game.Roi;
 import Game.Tour;
@@ -19,23 +21,32 @@ public class Main {
 
 	
 	public static void main(String[] args) {
+		
+		
 		Echiquier2 echec1 = new Echiquier2();
-		Cheval r = new Cheval(4,4,true);
-		Cheval b = new Cheval(2,3,true);
+		Player p1 = new Player(echec1,true);
+		Player p2 = new Player(echec1,false);
+		
+		
+		
+		Tour r = new Tour(4,4,true);
+		Tour b = new Tour(2,3,true);
 		Cheval h = new Cheval(1,2,false);
 
 		echec1.addPiece(h);
 		echec1.addPiece(r);
 		echec1.addPiece(b);
-		echec1.takePiece(4, 4);
-		echec1.movePiece(3, 2);
-		ArrayList<Coordonnee> f = r.possibleMove(echec1);
-		System.out.print(f.size());
+		
+		
+		
 		JFrame frame = new JFrame("Echecs");
 		Panel panel = new Panel(echec1);
+		MouseL mouse = new MouseL(echec1,panel);
+		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(800,800);
 		frame.setContentPane(panel);
+		frame.addMouseListener(mouse);
 		frame.setVisible(true);
 	
 	}
