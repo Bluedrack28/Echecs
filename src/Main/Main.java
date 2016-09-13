@@ -30,7 +30,7 @@ public class Main {
 		
 		
 		
-		Fou r = new Fou(3,5,true);
+		Fou r = new Fou(3,2,true);
 		Tour b = new Tour(5,5,true);
 		Cheval h = new Cheval(1,2,true);
 

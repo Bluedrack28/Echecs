@@ -24,38 +24,62 @@ public class Fou extends Piece{
 		if(this.x > this.y){
 			for (int i = this.getY(); i > 0; i--) {
 				
-				coor.add(new Coordonnee(this.x-i,this.y-i));
+				int x = this.x-i;
+				int y = this.y-i;
+				
+				coor.add(new Coordonnee(x,y));
 			}
 			for (int i = 1; i < 8-this.getX(); i++) {
 				
-				coor.add(new Coordonnee(this.x+i,this.y+i));
+				int x = this.x+i;
+				int y = this.y+i;
+				
+				coor.add(new Coordonnee(x,y));
 				
 			}
 			for (int i = this.getY(); i > 0; i--) {
 				
-				coor.add(new Coordonnee(this.x+i,this.y-i));
+				int x = this.x+i;
+				int y = this.y-i;
+				
+				coor.add(new Coordonnee(x,y));
 				
 			}
 			for (int i =this.getX() ; i > 0; i--) {
-			
-				coor.add(new Coordonnee(this.x-i,this.y+i));
+				
+				int x = this.x-i;
+				int y = this.y+i;
+				
+				coor.add(new Coordonnee(x,y));
 			}
 		}else{
 			for (int i = this.getX(); i > 0; i--) {
 				
-				coor.add(new Coordonnee(this.x-i,this.y-i));
+				int x = this.x-i;
+				int y = this.y-i;
+				
+				coor.add(new Coordonnee(x,y));
 			}
 			for (int i = 1; i < 8-this.getY(); i++) {
 				
-				coor.add(new Coordonnee(this.x+i,this.y+i));
+				int x = this.x+i;
+				int y = this.y+i;
+				
+				coor.add(new Coordonnee(x,y));
 			}
 			for (int i = this.getY(); i > 0; i--) {
 				
-				coor.add(new Coordonnee(this.x+i,this.y-i));
+				int x = this.x+i;
+				int y = this.y-i;
+				
+				coor.add(new Coordonnee(x,y));
 			}
 			for (int i = this.getX(); i > 0; i--) {
 				
-				coor.add(new Coordonnee(this.x-i,this.y+i));
+				int x = this.x-i;
+				int y = this.y+i;
+				
+				coor.add(new Coordonnee(x,y));
 			}
 		}
 		return coor;
