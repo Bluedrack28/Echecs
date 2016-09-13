@@ -12,6 +12,7 @@ import Game.Coordonnee;
 import Game.Echiquier;
 import Game.Echiquier2;
 import Game.Fou;
+import Game.Pion;
 import Game.Player;
 import Game.Reine;
 import Game.Roi;
@@ -29,16 +30,16 @@ public class Main {
 		
 		
 		
-		Tour r = new Tour(4,4,true);
-		Tour b = new Tour(2,3,true);
-		Cheval h = new Cheval(1,2,false);
+		Fou r = new Fou(3,5,true);
+		Tour b = new Tour(5,5,true);
+		Cheval h = new Cheval(1,2,true);
 
 		echec1.addPiece(h);
 		echec1.addPiece(r);
 		echec1.addPiece(b);
 		
 		
-		
+		System.out.println(r.possibleMove(echec1).size());
 		JFrame frame = new JFrame("Echecs");
 		Panel panel = new Panel(echec1);
 		MouseL mouse = new MouseL(echec1,panel);

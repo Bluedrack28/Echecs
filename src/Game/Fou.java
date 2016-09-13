@@ -20,44 +20,47 @@ public class Fou extends Piece{
 	public ArrayList<Coordonnee> possibleMove(Echiquier2 echec)  {
 		// TODO Auto-generated method stub
 		ArrayList<Coordonnee> coor = new ArrayList<Coordonnee>();
-		
-		for (int i =0; i < this.x; i++) {
-			if(echec.pieces[this.x-i-1][this.y-i-1] != null){
-				if(echec.pieces[this.x-i-1][this.y-i-1].getCamp() != this.getCamp()){
-					coor.add(new Coordonnee(this.x-i-1,this.y-i-1));
-				}
-				break;
+		Blocker b = new Blocker(echec, this);
+		if(this.x > this.y){
+			for (int i = this.getY(); i > 0; i--) {
+				
+				coor.add(new Coordonnee(this.x-i,this.y-i));
 			}
-			coor.add(new Coordonnee(this.x-i-1,this.y-i-1));
-		}
-		for (int i = 0; i < 7-this.y; i++) {
-			if(echec.pieces[this.x+i+1][this.y+i+1] != null){
-				if(echec.pieces[this.x+i+1][this.y+i+1].getCamp() != this.getCamp()){
-					coor.add(new Coordonnee(this.x+i+1,this.y+i+1));
-				}
-				break;
+			for (int i = 1; i < 8-this.getX(); i++) {
+				
+				coor.add(new Coordonnee(this.x+i,this.y+i));
+				
 			}
-			coor.add(new Coordonnee(this.x+i+1,this.y+i+1));
-		}
-		for (int i = 0; i < 7-this.x; i++) {
-			if(echec.pieces[this.x+i+1][this.y-i-1] != null){
-				if(echec.pieces[this.x+i+1][this.y-i-1].getCamp() != this.getCamp()){
-					coor.add(new Coordonnee(this.x+i+1,this.y-i-1));
-				}
-				break;
+			for (int i = this.getY(); i > 0; i--) {
+				
+				coor.add(new Coordonnee(this.x+i,this.y-i));
+				
 			}
-			coor.add(new Coordonnee(this.x+i+1,this.y-i-1));
-		}
-		for (int i = 0; i < 7-this.y; i++) {
-			if(echec.pieces[this.x-i-1][this.y+i+1] != null){
-				if(echec.pieces[this.x-i-1][this.y+i+1].getCamp() != this.getCamp()){
-					coor.add(new Coordonnee(this.x-i-1,this.y+i+1));
-				}
-				break;
+			for (int i =this.getX() ; i > 0; i--) {
+			
+				coor.add(new Coordonnee(this.x-i,this.y+i));
 			}
-			coor.add(new Coordonnee(this.x-i-1,this.y+i+1));
+		}else{
+			for (int i = this.getX(); i > 0; i--) {
+				
+				coor.add(new Coordonnee(this.x-i,this.y-i));
+			}
+			for (int i = 1; i < 8-this.getY(); i++) {
+				
+				coor.add(new Coordonnee(this.x+i,this.y+i));
+			}
+			for (int i = this.getY(); i > 0; i--) {
+				
+				coor.add(new Coordonnee(this.x+i,this.y-i));
+			}
+			for (int i = this.getX(); i > 0; i--) {
+				
+				coor.add(new Coordonnee(this.x-i,this.y+i));
+			}
 		}
-		
 		return coor;
 	}
+
+	
+	
 }
