@@ -30,7 +30,7 @@ public class Main {
 		
 		
 		
-		Fou r = new Fou(3,2,true);
+		Fou r = new Fou(5,3,true);
 		Tour b = new Tour(5,5,true);
 		Cheval h = new Cheval(1,2,true);
 
@@ -39,7 +39,7 @@ public class Main {
 		echec1.addPiece(b);
 		
 		
-		System.out.println(r.possibleMove(echec1).size());
+		//System.out.println(r.possibleMove(echec1).size());
 		JFrame frame = new JFrame("Echecs");
 		Panel panel = new Panel(echec1);
 		MouseL mouse = new MouseL(echec1,panel);

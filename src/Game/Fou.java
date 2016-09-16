@@ -26,14 +26,24 @@ public class Fou extends Piece{
 				
 				int x = this.x-i;
 				int y = this.y-i;
-				
+				if(b.isBlock(x, y)){
+					if(!b.isBlockByAAlly(x, y)){
+						coor.add(new Coordonnee(x,y));
+					}
+					break;
+				}
 				coor.add(new Coordonnee(x,y));
 			}
 			for (int i = 1; i < 8-this.getX(); i++) {
 				
 				int x = this.x+i;
 				int y = this.y+i;
-				
+				if(b.isBlock(x, y)){
+					if(!b.isBlockByAAlly(x, y)){
+						coor.add(new Coordonnee(x,y));
+					}
+					break;
+				}
 				coor.add(new Coordonnee(x,y));
 				
 			}
@@ -41,15 +51,25 @@ public class Fou extends Piece{
 				
 				int x = this.x+i;
 				int y = this.y-i;
-				
+f
+					if(!b.isBlockByAAlly(x, y)){
+						coor.add(new Coordonnee(x,y));
+					}
+					break;
+				}
 				coor.add(new Coordonnee(x,y));
 				
 			}
-			for (int i =this.getX() ; i > 0; i--) {
+			for (int i = this.getX() ; i > 0; i--) {
 				
 				int x = this.x-i;
 				int y = this.y+i;
-				
+				if(b.isBlock(x, y)){
+					if(!b.isBlockByAAlly(x, y)){
+						coor.add(new Coordonnee(x,y));
+					}
+					break;
+				}
 				coor.add(new Coordonnee(x,y));
 			}
 		}else{
@@ -57,28 +77,48 @@ public class Fou extends Piece{
 				
 				int x = this.x-i;
 				int y = this.y-i;
-				
+				if(b.isBlock(x, y)){
+					if(!b.isBlockByAAlly(x, y)){
+						coor.add(new Coordonnee(x,y));
+					}
+					break;
+				}
 				coor.add(new Coordonnee(x,y));
 			}
 			for (int i = 1; i < 8-this.getY(); i++) {
 				
 				int x = this.x+i;
 				int y = this.y+i;
-				
+				if(b.isBlock(x, y)){
+					if(!b.isBlockByAAlly(x, y)){
+						coor.add(new Coordonnee(x,y));
+					}
+					break;
+				}
 				coor.add(new Coordonnee(x,y));
 			}
 			for (int i = this.getY(); i > 0; i--) {
 				
 				int x = this.x+i;
 				int y = this.y-i;
-				
+				if(b.isBlock(x, y)){
+					if(!b.isBlockByAAlly(x, y)){
+						coor.add(new Coordonnee(x,y));
+					}
+					break;
+				}
 				coor.add(new Coordonnee(x,y));
 			}
 			for (int i = this.getX(); i > 0; i--) {
 				
 				int x = this.x-i;
 				int y = this.y+i;
-				
+				if(b.isBlock(x, y)){
+					if(!b.isBlockByAAlly(x, y)){
+						coor.add(new Coordonnee(x,y));
+					}
+					break;
+				}
 				coor.add(new Coordonnee(x,y));
 			}
 		}
