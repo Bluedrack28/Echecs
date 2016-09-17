@@ -20,11 +20,11 @@ public class Tour extends Piece{
 	public ArrayList<Coordonnee> possibleMove(Echiquier2 echec) {
 		// TODO Auto-generated method stub
 		ArrayList<Coordonnee> coor = new ArrayList<Coordonnee>();
-
+		Blocker b = new Blocker(echec, this);
 		for (int i = this.y+1 ; i < 8; i++) {
 			
-			if(echec.getPiece(this.x, i) != null){
-				if(echec.getPiece(this.x, i).getCamp() != this.getCamp()){
+			if(b.isBlock(this.x, i)){
+				if(!b.isBlockByAAlly(this.x, i)){
 					coor.add(new Coordonnee(this.x, i));
 				}
 				break;
@@ -35,8 +35,8 @@ public class Tour extends Piece{
 		}
 		for (int i = this.x+1 ; i < 8; i++) {
 			
-			if(echec.getPiece(i, this.y) != null){
-				if(echec.getPiece(i, this.y).getCamp() != this.getCamp()){
+			if(b.isBlock(i, this.y)){
+				if(!b.isBlockByAAlly(i, this.y)){
 					coor.add(new Coordonnee(i, this.y));
 				}
 				break;
@@ -46,8 +46,8 @@ public class Tour extends Piece{
 		}
 		for (int i = this.y-1 ; i > -1; i--) {
 			
-			if(echec.getPiece(this.x, i) != null){
-				if(echec.getPiece(this.x, i).getCamp() != this.getCamp()){
+			if(b.isBlock(this.x, i)){
+				if(!b.isBlockByAAlly(this.x, i)){
 					coor.add(new Coordonnee(this.x, i));
 				}
 				break;
@@ -58,8 +58,8 @@ public class Tour extends Piece{
 		}
 		for (int i = this.x-1 ; i > -1; i--) {
 			
-			if(echec.getPiece(i, this.y) != null){
-				if(echec.getPiece(i, this.y).getCamp() != this.getCamp()){
+			if(b.isBlock(i, this.y)){
+				if(!b.isBlockByAAlly(i, this.y)){
 					coor.add(new Coordonnee(i, this.y));
 				}
 				break;
