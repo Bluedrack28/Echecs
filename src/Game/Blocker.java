@@ -1,9 +1,9 @@
 package Game;
 
 public class Blocker {
-	private Echiquier2 echec;
+	private Echiquier echec;
 	private Piece p;
-	public Blocker(Echiquier2 echiquier, Piece piece){
+	public Blocker(Echiquier echiquier, Piece piece){
 		echec = echiquier;
 		p = piece;
 	}

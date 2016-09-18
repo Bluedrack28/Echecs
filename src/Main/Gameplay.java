@@ -1,12 +1,12 @@
 package Main;
 
-import Game.Echiquier2;
+import Game.Echiquier;
 
 public class Gameplay{
-	public Echiquier2 echec;
+	public Echiquier echec;
 	public Boolean tour;
 	
-	public Gameplay(Echiquier2 echiquier){
+	public Gameplay(Echiquier echiquier){
 		echec = echiquier;
 	}
 }

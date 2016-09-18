@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import Exception.NoPieceException;
 import Game.Cheval;
 import Game.Echiquier;
-import Game.Echiquier2;
+import Game.Echiquier;
 import Game.Fou;
 import Game.Piece;
 import Game.Pion;
@@ -22,14 +22,12 @@ import Game.Tour;
 public class Panel extends JPanel	{
 	
 	private Graphics gr;
-	Reine p = new Reine(4,4,true);
-	int MouseX;
-	int MouseY;
+	public boolean drawTakePiece;
 	public Gameplay game;
-	public Echiquier2 echec = new Echiquier2();
+	public Echiquier echec = new Echiquier();
 	
 	
-	public Panel(Echiquier2 echiquier ){
+	public Panel(Echiquier echiquier ){
 		echec = echiquier;
 		Roi p = new Roi(1,2,true);
 		
@@ -38,11 +36,17 @@ public class Panel extends JPanel	{
 	public void paintComponent(Graphics g){
 		
 		Graphisme graph = new Graphisme(g);
+		
 		graph.drawEchiquier();
 		
 		//graph.drawCoordonnees(echec.getPiece(3, 3).possibleMove(echec));
+		if(drawTakePiece){
+			graph.drawTheTakedPiece(echec.pBuffer);
+			graph.drawCoordonnees(echec.pBuffer.possibleMove(echec));
+		}
 		graph.drawPieces2(echec.getPieces());
-
+		
+		
 	}
 
 	

@@ -18,7 +18,7 @@ public class Pion extends Piece{
 	}
 
 	@Override
-	public ArrayList<Coordonnee> possibleMove(Echiquier2 echec) {
+	public ArrayList<Coordonnee> possibleMove(Echiquier echec) {
 		// TODO Auto-generated method stub
 		ArrayList<Coordonnee> coor = new ArrayList<Coordonnee>();
 	
@@ -35,12 +35,13 @@ public class Pion extends Piece{
 		}
 		for (int i = 0; i < coor.size(); i++) {
 			if(echec.getPiece(coor.get(i).x, coor.get(i).y)!= null){
-				if(echec.getPiece(coor.get(i).x, coor.get(i).y).getCamp() == this.getCamp()){
-					coor.remove(i);
-					i--;
-				}
+
+				coor.remove(i);
+				i--;
+				
 			}
 		}
+		
 		return coor;
 	}
 

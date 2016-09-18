@@ -50,12 +50,18 @@ public class Graphisme {
 			
 		}
 	}
+
 	public void drawPieces(ArrayList<Piece> pieces){
 		for (Piece p : pieces) {
 			this.drawPiece(p);
 		}
 	}
 	
+	public void drawTheTakedPiece(Piece p){
+		g.setColor(Color.green);
+		g.fillOval(p.x*100, p.y*100, 100, 100);
+		this.drawPiece(p);
+	}
 
 	public void drawCoordonnees(ArrayList<Coordonnee> coor){
 		for (Coordonnee c : coor) {

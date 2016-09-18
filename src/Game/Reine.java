@@ -19,7 +19,7 @@ public class Reine extends Piece {
 	}
 
 	@Override
-	public ArrayList<Coordonnee> possibleMove(Echiquier2 echec) {
+	public ArrayList<Coordonnee> possibleMove(Echiquier echec) {
 		// TODO Auto-generated method stub
 		ArrayList<Coordonnee> coor = new ArrayList<Coordonnee>();
 		Blocker b = new Blocker(echec, this);

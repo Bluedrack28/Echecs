@@ -5,14 +5,14 @@ import java.awt.MouseInfo;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import Game.Echiquier2;
+import Game.Echiquier;
 import Game.Player;
 
 public class MouseL implements MouseListener{
 	public boolean click;
-	public Echiquier2 echec;
+	public Echiquier echec;
 	public Panel p;
-	public MouseL(Echiquier2 echichiquer,Panel panel){
+	public MouseL(Echiquier echichiquer,Panel panel){
 		click = true;
 		p = panel;
 		echec = echichiquer;
@@ -41,7 +41,9 @@ public class MouseL implements MouseListener{
 		if(click){
 			try {
 				echec.takePiece(this.getCoordonneX(), this.getCoordonneY());
+				p.drawTakePiece = true;
 				click = false;
+				p.repaint();
 			} catch (Exception e2) {
 				// TODO: handle exception
 				
@@ -53,6 +55,7 @@ public class MouseL implements MouseListener{
 			} catch (Exception e2) {
 				// TODO: handle exception
 			}
+			p.drawTakePiece = false;
 			click = true;
 			p.repaint();
 		}

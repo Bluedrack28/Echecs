@@ -26,7 +26,7 @@ public abstract class Piece extends Coordonnee{
 	public void mourir(){
 	}
 	
-	public abstract ArrayList<Coordonnee> possibleMove(Echiquier2 echec);
+	public abstract ArrayList<Coordonnee> possibleMove(Echiquier echec);
 
 	public abstract String getURLImage();
 	
