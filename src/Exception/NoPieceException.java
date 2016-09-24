@@ -1,5 +1,5 @@
 package Exception;
 
-public class NoPieceException extends Exception{
+public class NoPieceException extends NullPointerException{
 
 }

@@ -1,6 +1,9 @@
-package Game;
+package Pieces;
 
 import java.util.ArrayList;
+
+import Game.Coordonnee;
+import Game.Echiquier;
 
 public class Cheval extends Piece{
 

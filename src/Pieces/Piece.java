@@ -1,7 +1,10 @@
-package Game;
+package Pieces;
 
 import java.awt.Image;
 import java.util.ArrayList;
+
+import Game.Coordonnee;
+import Game.Echiquier;
 
 public abstract class Piece extends Coordonnee{
 
@@ -29,5 +32,8 @@ public abstract class Piece extends Coordonnee{
 	public abstract ArrayList<Coordonnee> possibleMove(Echiquier echec);
 
 	public abstract String getURLImage();
+	
+	
+	
 	
 }

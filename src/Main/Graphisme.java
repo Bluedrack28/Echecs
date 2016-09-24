@@ -11,8 +11,9 @@ import javax.swing.ImageIcon;
 import javax.swing.text.IconView;
 import javax.swing.text.html.ImageView;
 
+import Exception.NoPieceException;
 import Game.Coordonnee;
-import Game.Piece;
+import Pieces.Piece;
 
 public class Graphisme {
 	

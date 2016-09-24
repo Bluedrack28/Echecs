@@ -1,7 +1,10 @@
-package Game;
+package Pieces;
 
 import java.net.URL;
 import java.util.ArrayList;
+
+import Game.Coordonnee;
+import Game.Echiquier;
 
 public class Pion extends Piece{
 
@@ -23,11 +26,13 @@ public class Pion extends Piece{
 		ArrayList<Coordonnee> coor = new ArrayList<Coordonnee>();
 	
 		if(this.getCamp()){
+
 			if(this.y==6){
 				coor.add(new Coordonnee(this.x,this.y - 2));	
 			}
 			coor.add(new Coordonnee(this.x,this.y - 1));
 		}else{
+			
 			if(this.y==1){
 				coor.add(new Coordonnee(this.x,this.y + 2));
 			}
@@ -35,12 +40,21 @@ public class Pion extends Piece{
 		}
 		for (int i = 0; i < coor.size(); i++) {
 			if(echec.getPiece(coor.get(i).x, coor.get(i).y)!= null){
-
 				coor.remove(i);
 				i--;
-				
 			}
+		
 		}
+		if(this.getCamp()){
+			if(echec.isBeatable(this.x - 1, this.y - 1, this.getCamp())) coor.add(new Coordonnee(this.x - 1,this.y - 1));
+			if(echec.isBeatable(this.x + 1, this.y - 1, this.getCamp())) coor.add(new Coordonnee(this.x + 1,this.y - 1));
+		}else{
+			if(echec.isBeatable(this.x + 1, this.y + 1, this.getCamp())) coor.add(new Coordonnee(this.x + 1,this.y + 1));
+			if(echec.isBeatable(this.x - 1, this.y + 1, this.getCamp())) coor.add(new Coordonnee(this.x - 1,this.y + 1));
+		}
+		
+			
+		
 		
 		return coor;
 	}

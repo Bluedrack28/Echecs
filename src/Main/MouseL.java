@@ -6,17 +6,19 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import Game.Echiquier;
+import Game.Gameplay;
 import Game.Player;
 
 public class MouseL implements MouseListener{
 	public boolean click;
 	public Echiquier echec;
 	public Panel p;
+	public Gameplay game;
 	public MouseL(Echiquier echichiquer,Panel panel){
 		click = true;
 		p = panel;
 		echec = echichiquer;
-
+		game = new Gameplay(echec, p);
 	}
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -38,27 +40,7 @@ public class MouseL implements MouseListener{
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if(click){
-			try {
-				echec.takePiece(this.getCoordonneX(), this.getCoordonneY());
-				p.drawTakePiece = true;
-				click = false;
-				p.repaint();
-			} catch (Exception e2) {
-				// TODO: handle exception
-				
-			}
-			
-		}else{
-			try {
-				echec.movePiece(getCoordonneX(), this.getCoordonneY());
-			} catch (Exception e2) {
-				// TODO: handle exception
-			}
-			p.drawTakePiece = false;
-			click = true;
-			p.repaint();
-		}
+		game.plays();
 	}
 
 	@Override

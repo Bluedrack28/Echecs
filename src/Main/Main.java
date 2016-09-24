@@ -2,21 +2,22 @@ package Main;
 
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import com.sun.glass.events.MouseEvent;
 
 import Exception.NoPieceException;
-import Game.Cheval;
 import Game.Coordonnee;
 import Game.Echiquier;
 import Game.Echiquier;
-import Game.Fou;
-import Game.Pion;
 import Game.Player;
-import Game.Reine;
-import Game.Roi;
-import Game.Tour;
+import Pieces.Cheval;
+import Pieces.Fou;
+import Pieces.Pion;
+import Pieces.Reine;
+import Pieces.Roi;
+import Pieces.Tour;
 
 public class Main {
 
@@ -25,7 +26,7 @@ public class Main {
 		
 		
 		Echiquier echec1 = new Echiquier();
-		echec1.resetEchiquier();
+		echec1.resetEchiquier(true);
 	
 		JFrame frame = new JFrame("Echecs");
 		Panel panel = new Panel(echec1);
@@ -36,7 +37,9 @@ public class Main {
 		frame.setLocation(100, 100);
 		frame.getContentPane().add(panel);
 		frame.addMouseListener(mouse);
+		frame.setIconImage(new ImageIcon("pieces/bCheval.png").getImage());
 		frame.setVisible(true);
+		
 	
 	}
 
