@@ -34,7 +34,7 @@ public class Main {
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(800,800);
-		frame.setLocation(100, 100);
+		
 		frame.getContentPane().add(panel);
 		frame.addMouseListener(mouse);
 		frame.setIconImage(new ImageIcon("pieces/bCheval.png").getImage());
