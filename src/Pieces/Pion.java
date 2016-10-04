@@ -46,11 +46,19 @@ public class Pion extends Piece{
 		
 		}
 		if(this.getCamp()){
-			if(echec.isBeatable(this.x - 1, this.y - 1, this.getCamp())) coor.add(new Coordonnee(this.x - 1,this.y - 1));
-			if(echec.isBeatable(this.x + 1, this.y - 1, this.getCamp())) coor.add(new Coordonnee(this.x + 1,this.y - 1));
+			if(Coordonnee.isInTheCheesBoard(this.x - 1, this.y - 1)){
+				if(echec.isBeatable(this.x - 1, this.y - 1, this.getCamp())) coor.add(new Coordonnee(this.x - 1,this.y - 1));
+			}
+			if(Coordonnee.isInTheCheesBoard(this.x + 1, this.y - 1)){
+				if(echec.isBeatable(this.x + 1, this.y - 1, this.getCamp())) coor.add(new Coordonnee(this.x + 1,this.y - 1));
+			}
 		}else{
-			if(echec.isBeatable(this.x + 1, this.y + 1, this.getCamp())) coor.add(new Coordonnee(this.x + 1,this.y + 1));
-			if(echec.isBeatable(this.x - 1, this.y + 1, this.getCamp())) coor.add(new Coordonnee(this.x - 1,this.y + 1));
+			if(Coordonnee.isInTheCheesBoard(this.x + 1, this.y + 1)){
+				if(echec.isBeatable(this.x + 1, this.y + 1, this.getCamp())) coor.add(new Coordonnee(this.x + 1,this.y + 1));
+			}
+			if(Coordonnee.isInTheCheesBoard(this.x - 1, this.y + 1)){
+				if(echec.isBeatable(this.x - 1, this.y + 1, this.getCamp())) coor.add(new Coordonnee(this.x - 1,this.y + 1));
+			}
 		}
 		
 			
@@ -59,4 +67,5 @@ public class Pion extends Piece{
 		return coor;
 	}
 
+	
 }

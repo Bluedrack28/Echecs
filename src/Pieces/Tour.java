@@ -74,4 +74,5 @@ public class Tour extends Piece{
 		return coor;
 	}
 
+	
 }

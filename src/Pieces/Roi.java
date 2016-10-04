@@ -37,11 +37,12 @@ public class Roi extends Piece{
 		coor.add(new Coordonnee(this.x+1,this.y-1));
 		
 		for (int i = 0; i < coor.size(); i++) {
-			if(!coor.get(i).isInTheCheesBoard()){
+			if(!Coordonnee.isInTheCheesBoard(coor.get(i).getX(),coor.get(i).getY() )){
 				coor.remove(i);
 				i--;
 			}
 		}
+		
 		for (int i = 0; i < coor.size(); i++) {
 			if(echec.getPiece(coor.get(i).x, coor.get(i).y)!= null){
 				if(echec.getPiece(coor.get(i).x, coor.get(i).y).getCamp() == this.getCamp()){

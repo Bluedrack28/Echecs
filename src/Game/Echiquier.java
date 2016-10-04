@@ -76,8 +76,11 @@ public class Echiquier {
 		
 		if(pBuffer != null) pieces[x][y] = null;
 		
-		}
-
+	}
+	public void resetTakedPiece(){
+		pieces[pBuffer.getX()][pBuffer.getY()] = pBuffer;
+		pBuffer = null;
+	}
 	public boolean isAPosibleMove(Piece p,int x,int y,boolean camp){
 		for (Coordonnee c : p.possibleMove(this)) {
 			if(c.getX() == x && c.getY() == y && p.getCamp() == camp) return true;

@@ -22,8 +22,8 @@ public class Coordonnee  {
 	public int getY(){
 		return y;
 	}
-	public boolean isInTheCheesBoard(){
-		if(this.y > 7 || this.x > 7|| this.y < 0 || this.x < 0){
+	public static boolean isInTheCheesBoard(int x,int y){
+		if(y > 7 || x > 7|| y < 0 || x < 0){
 			return false;
 		}
 		else{

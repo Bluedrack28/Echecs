@@ -4,6 +4,7 @@ import java.awt.MouseInfo;
 
 import Exception.NoPieceException;
 import Main.Panel;
+import Pieces.Piece;
 
 public class Gameplay{
 	public Echiquier echec;
@@ -46,10 +47,16 @@ public class Gameplay{
 			
 		}else{
 			try {
-				echec.movePiece(this.getCoordonneX(), this.getCoordonneY(),camp);
+				if(echec.isAPosibleMove(echec.pBuffer, this.getCoordonneX(), this.getCoordonneY(),camp)){
+					echec.movePiece(this.getCoordonneX(), this.getCoordonneY(),camp);
+					
+					camp = !camp;
+				}else{
+					echec.resetTakedPiece();
+				}
+				
 				p.drawTakePiece = false;
 				click = true;
-				camp = !camp;
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
@@ -58,7 +65,13 @@ public class Gameplay{
 			
 		}
 	}
-	
+	public boolean isTheEnd(){
+		for (Piece[] pieces : echec.getPieces()) {
+			for (Piece piece : pieces) {
+				
+			}
+		}
+	}
 	public int getCoordonneX(){
 		return (int)((MouseInfo.getPointerInfo().getLocation().x-p.getLocationOnScreen().x)/100);
 	}
