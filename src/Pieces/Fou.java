@@ -2,6 +2,7 @@ package Pieces;
 
 import java.util.ArrayList;
 
+import Game.Blocker;
 import Game.Coordonnee;
 import Game.Echiquier;
 

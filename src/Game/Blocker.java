@@ -1,6 +1,6 @@
-package Pieces;
+package Game;
 
-import Game.Echiquier;
+import Pieces.Piece;
 
 public class Blocker {
 	private Echiquier echec;

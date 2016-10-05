@@ -34,7 +34,7 @@ public class Cheval extends Piece{
 		coor.add(new Coordonnee(this.x-1,this.y-2));
 		
 		for (int i = 0; i < coor.size(); i++) {
-			if(!Coordonnee.isInTheCheesBoard(coor.get(i).getX(),coor.get(i).getY() )){
+			if(!echec.isInTheCheesBoard(coor.get(i).getX(),coor.get(i).getY() )){
 				coor.remove(i);
 				i--;
 			}

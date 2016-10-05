@@ -14,13 +14,23 @@ public class Echiquier {
 	public Piece[][] pieces;
 	public  Piece pBuffer;
 	private boolean turn;
+	private int x;
+	private int y;
 
 	public Echiquier(){
-		pieces = new Piece[8][8];
+		x = 7;
+		y = 7;
+		pieces = new Piece[x+1][y+1];
 		turn = true;
 		
+		
 	}
-	
+	public int getX(){
+		return x;
+	}
+	public int getY(){
+		return y;
+	}
 	public void addPiece(Piece p){
 		pieces[p.getX()][p.getY()] = p;
 	}
@@ -102,6 +112,14 @@ public class Echiquier {
 			pieces[x][y] = pBuffer;
 		}else{
 			pieces[pBuffer.x][pBuffer.y] = pBuffer;
+		}
+	}
+	public boolean isInTheCheesBoard(int x,int y){
+		if(y > this.getX() || x > this.getY()|| y < 0 || x < 0){
+			return false;
+		}
+		else{
+			return true;
 		}
 	}
 }
