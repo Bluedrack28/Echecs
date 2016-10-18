@@ -141,4 +141,10 @@ public class Reine extends Piece {
 		return coor;
 	}
 
+	@Override
+	public int getIdentity() {
+		// TODO Auto-generated method stub
+		return 4;
+	}
+
 }

@@ -51,4 +51,10 @@ public class Cheval extends Piece{
 		return coor;
 	}
 
+	@Override
+	public int getIdentity() {
+		// TODO Auto-generated method stub
+		return 2;
+	}
+
 }

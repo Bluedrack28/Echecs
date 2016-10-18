@@ -94,4 +94,10 @@ public class Fou extends Piece {
 		return coor;
 	}
 
+	@Override
+	public int getIdentity() {
+		// TODO Auto-generated method stub
+		return 3;
+	}
+
 }

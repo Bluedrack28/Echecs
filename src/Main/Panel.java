@@ -41,11 +41,11 @@ public class Panel extends JPanel	{
 		graph.drawEchiquier();
 		
 		if(drawTakePiece){
-		graph.drawTheTakedPiece(echec.pBuffer);
-		graph.drawCoordonnees(echec.pBuffer.possibleMove(echec));
+			graph.drawTheTakedPiece(echec.pBuffer);
+			graph.drawCoordonnees(echec.pBuffer.possibleMove(echec));
 		}
 		
-	
+		//graph.drawTheEnd(true);
 		graph.drawPieces2(echec.getPieces());
 		
 		

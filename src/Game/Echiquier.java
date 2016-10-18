@@ -13,7 +13,7 @@ public class Echiquier {
 
 	public Piece[][] pieces;
 	public  Piece pBuffer;
-	private boolean turn;
+	private boolean c = true;
 	private int x;
 	private int y;
 
@@ -21,9 +21,6 @@ public class Echiquier {
 		x = 7;
 		y = 7;
 		pieces = new Piece[x+1][y+1];
-		turn = true;
-		
-		
 	}
 	public int getX(){
 		return x;
@@ -42,8 +39,12 @@ public class Echiquier {
 	public Piece[][] getPieces(){
 		return pieces;
 	}
-
+	public boolean getCamp(){
+		return c;
+	}
 	public void resetEchiquier(boolean camp){
+		pieces = new Piece[x+1][y+1];
+		c = camp;
 		for (int i = 0; i < 8; i++) {
 			this.addPiece(new Pion(i,1,!camp));
 		}
@@ -62,9 +63,9 @@ public class Echiquier {
 		this.addPiece(new Fou(5,7,camp));
 		this.addPiece(new Fou(2,0,!camp));
 		this.addPiece(new Fou(5,0,!camp));
-		this.addPiece(new Reine(4,7,camp));
+		this.addPiece(new Reine(3,7,camp));
 		this.addPiece(new Reine(3,0,!camp));
-		this.addPiece(new Roi(3,7,camp));
+		this.addPiece(new Roi(4,7,camp));
 		this.addPiece(new Roi(4,0,!camp));
 	}
 
@@ -106,13 +107,16 @@ public class Echiquier {
 		return false;
 	}
 	public void movePiece(int x,int y,boolean camp){
-		if(this.isAPosibleMove(pBuffer, x, y,camp)){
 			pBuffer.x = x;
 			pBuffer.y = y;
 			pieces[x][y] = pBuffer;
-		}else{
-			pieces[pBuffer.x][pBuffer.y] = pBuffer;
-		}
+	}
+	public void replacePiece(int xDebut,int yDebut,int xFin,int yFin){
+		Piece p = this.getPiece(xDebut, yDebut);
+		p.setX(xFin);
+		p.setY(yFin);
+		this.addPiece(p);
+		pieces[xDebut][yDebut] = null;
 	}
 	public boolean isInTheCheesBoard(int x,int y){
 		if(y > this.getX() || x > this.getY()|| y < 0 || x < 0){

@@ -1,6 +1,7 @@
 package Main;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 
@@ -14,6 +15,7 @@ import javax.swing.text.html.ImageView;
 import Exception.NoPieceException;
 import Game.Coordonnee;
 import Pieces.Piece;
+import Pieces.Pieces;
 
 public class Graphisme {
 	
@@ -24,7 +26,7 @@ public class Graphisme {
 	}
 	
 	public void drawEchiquier(){
-		boolean color = true;
+		boolean color = false;
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
 				if(color){
@@ -68,6 +70,15 @@ public class Graphisme {
 		for (Coordonnee c : coor) {
 			g.setColor(Color.RED);
 			g.fillRect(c.getX()*100, c.getY()*100, 100, 100);
+		}
+	}
+	public void drawTheEnd(boolean camp){
+		g.setColor(Color.BLACK);
+		g.setFont(new Font("Century Schoolbook L", 0, 50));
+		if(camp = Pieces.BLANC){
+			g.drawString("les blancs ont gagnés", 150, 400);
+		}else{
+			g.drawString("les noirs ont gagnés", 400, 400);
 		}
 	}
 }

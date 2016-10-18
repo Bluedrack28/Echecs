@@ -25,7 +25,7 @@ public class Pion extends Piece{
 		// TODO Auto-generated method stub
 		ArrayList<Coordonnee> coor = new ArrayList<Coordonnee>();
 	
-		if(this.getCamp()){
+		if(echec.getCamp() == this.getCamp()){
 
 			if(this.y==6){
 				coor.add(new Coordonnee(this.x,this.y - 2));	
@@ -45,7 +45,7 @@ public class Pion extends Piece{
 			}
 		
 		}
-		if(this.getCamp()){
+		if(echec.getCamp() == this.getCamp()){
 			if(echec.isInTheCheesBoard(this.x - 1, this.y - 1)){
 				if(echec.isBeatable(this.x - 1, this.y - 1, this.getCamp())) coor.add(new Coordonnee(this.x - 1,this.y - 1));
 			}
@@ -61,10 +61,13 @@ public class Pion extends Piece{
 			}
 		}
 		
-			
-		
-		
 		return coor;
+	}
+
+	@Override
+	public int getIdentity() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	

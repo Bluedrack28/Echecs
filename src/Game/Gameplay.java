@@ -5,6 +5,7 @@ import java.awt.MouseInfo;
 import Exception.NoPieceException;
 import Main.Panel;
 import Pieces.Piece;
+import Pieces.Pieces;
 import Pieces.Roi;
 
 public class Gameplay{
@@ -55,11 +56,34 @@ public class Gameplay{
 		}else{
 			
 			if(echec.isAPosibleMove(echec.pBuffer,x,y,camp)){
-				if(this.pieceTaked(x,y)){
-					System.out.println(this.thePieceTaked(x,y));
-				}
-				echec.movePiece(x,y,camp);
 				
+				
+				// grand roque et petit roque
+				if(echec.pBuffer.getIdentity() == Pieces.ROI){
+					if(x == 2 && y == 7){
+						echec.replacePiece(0, 7, 3, 7);
+					}
+					if(x == 6 && y == 7 ){
+						echec.replacePiece(7, 7, 5, 7);
+					}
+					if(x == 2 && y == 0){
+						echec.replacePiece(0, 0, 3, 0);
+					}
+					if(x == 6 && y == 0){
+						echec.replacePiece(7, 0, 5, 0);
+					}
+				}
+				
+				// prise en charge de la defait
+				if(this.pieceTaked(x,y)){
+					if(this.isTheEnd(this.thePieceTaked(x, y))){
+						echec.resetEchiquier(false);
+					}
+					System.out.println(this.thePieceTaked(x,y));
+					
+				}
+				echec.pBuffer.plusOneMove();
+				echec.movePiece(x,y,camp);
 				camp = !camp;
 			}else{
 				echec.resetTakedPiece();
@@ -67,8 +91,6 @@ public class Gameplay{
 			
 			p.drawTakePiece = false;
 			click = true;
-			
-			
 			p.repaint();
 			
 		}
@@ -92,6 +114,17 @@ public class Gameplay{
 	}
 	
 	public boolean isTheEnd(Piece p){
+		if(p.getIdentity() == Pieces.ROI){
+			
+			System.out.println("fin" );
+			if(p.getCamp() == Pieces.BLANC){
+				System.out.println("C'est les NOIRS qui gagnent");
+			}else{
+				System.out.println("C'est les BLANCS qui gagnent");
+			}
+			return true;
+			
+		}
 		return false;
 	}
 	public int getCoordonneX(){

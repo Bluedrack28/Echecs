@@ -14,6 +14,7 @@ import Game.Echiquier;
 import Game.Player;
 import Pieces.Cheval;
 import Pieces.Fou;
+import Pieces.Piece;
 import Pieces.Pion;
 import Pieces.Reine;
 import Pieces.Roi;
@@ -26,15 +27,12 @@ public class Main {
 		
 		
 		Echiquier echec1 = new Echiquier();
-		echec1.resetEchiquier(true);
-	
+		echec1.resetEchiquier(true);	
 		JFrame frame = new JFrame("Echecs");
 		Panel panel = new Panel(echec1);
 		MouseL mouse = new MouseL(echec1,panel);
-		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(800,800);
-		
 		frame.getContentPane().add(panel);
 		frame.addMouseListener(mouse);
 		frame.setIconImage(new ImageIcon("pieces/bCheval.png").getImage());
