@@ -1,10 +1,10 @@
-package Pieces;
+package pieces;
 
 import java.util.ArrayList;
 
-import Game.Blocker;
-import Game.Coordonnee;
-import Game.Echiquier;
+import game.Blocker;
+import game.Coordonnee;
+import game.Echiquier;
 
 public class Tour extends Piece{
 
@@ -16,8 +16,8 @@ public class Tour extends Piece{
 	@Override
 	public String getURLImage() {
 		// TODO Auto-generated method stub
-		if(this.getCamp()) return "pieces/bTour.png";
-		else return "pieces/nTour.png";
+		if(this.getCamp()) return "src/pieces/images/bTour.png";
+		else return "src/pieces/images/nTour.png";
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package Main;
+package main;
 
 import java.awt.Graphics;
 import java.awt.MouseInfo;
@@ -8,17 +8,16 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-import Exception.NoPieceException;
-import Game.Echiquier;
-import Game.Gameplay;
-import Pieces.Cheval;
-import Pieces.Fou;
-import Pieces.Piece;
-import Pieces.Pion;
-import Pieces.Reine;
-import Pieces.Roi;
-import Pieces.Tour;
-import Game.Echiquier;
+import exception.NoPieceException;
+import game.Echiquier;
+import game.Gameplay;
+import pieces.Cheval;
+import pieces.Fou;
+import pieces.Piece;
+import pieces.Pion;
+import pieces.Reine;
+import pieces.Roi;
+import pieces.Tour;
 
 public class Panel extends JPanel	{
 	

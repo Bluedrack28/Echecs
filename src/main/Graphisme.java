@@ -1,4 +1,4 @@
-package Main;
+package main;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -12,10 +12,10 @@ import javax.swing.ImageIcon;
 import javax.swing.text.IconView;
 import javax.swing.text.html.ImageView;
 
-import Exception.NoPieceException;
-import Game.Coordonnee;
-import Pieces.Piece;
-import Pieces.Pieces;
+import exception.NoPieceException;
+import game.Coordonnee;
+import pieces.Piece;
+import pieces.Pieces;
 
 public class Graphisme {
 	

@@ -1,13 +1,13 @@
-package Game;
+package game;
 
-import Exception.NoPieceException;
-import Pieces.Cheval;
-import Pieces.Fou;
-import Pieces.Piece;
-import Pieces.Pion;
-import Pieces.Reine;
-import Pieces.Roi;
-import Pieces.Tour;
+import exception.NoPieceException;
+import pieces.Cheval;
+import pieces.Fou;
+import pieces.Piece;
+import pieces.Pion;
+import pieces.Reine;
+import pieces.Roi;
+import pieces.Tour;
 
 public class Echiquier {
 

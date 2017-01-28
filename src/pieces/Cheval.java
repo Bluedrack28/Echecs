@@ -1,9 +1,9 @@
-package Pieces;
+package pieces;
 
 import java.util.ArrayList;
 
-import Game.Coordonnee;
-import Game.Echiquier;
+import game.Coordonnee;
+import game.Echiquier;
 
 public class Cheval extends Piece{
 
@@ -15,8 +15,8 @@ public class Cheval extends Piece{
 	@Override
 	public String getURLImage() {
 		// TODO Auto-generated method stub
-		if(this.getCamp()) return "pieces/bCheval.png";
-		else return "pieces/nCheval.png";
+		if(this.getCamp()) return "src/pieces/images/bCheval.png";
+		else return "src/pieces/images/nCheval.png";
 	}
 
 	@Override

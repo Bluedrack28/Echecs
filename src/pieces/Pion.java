@@ -1,10 +1,10 @@
-package Pieces;
+package pieces;
 
 import java.net.URL;
 import java.util.ArrayList;
 
-import Game.Coordonnee;
-import Game.Echiquier;
+import game.Coordonnee;
+import game.Echiquier;
 
 public class Pion extends Piece{
 
@@ -16,8 +16,8 @@ public class Pion extends Piece{
 	@Override
 	public String getURLImage() {
 		// TODO Auto-generated method stub
-		if(this.getCamp()) return "pieces/bPion.png";
-		else return "pieces/nPion.png";
+		if(this.getCamp()) return "src/pieces/images/bPion.png";
+		else return "src/pieces/images/nPion.png";
 	}
 
 	@Override

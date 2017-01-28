@@ -1,6 +1,6 @@
-package Save;
+package save;
 
-import Game.Echiquier;
+import game.Echiquier;
 
 public class Save {
 

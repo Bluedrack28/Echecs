@@ -1,10 +1,10 @@
-package Pieces;
+package pieces;
 
 import java.awt.Image;
 import java.util.ArrayList;
 
-import Game.Coordonnee;
-import Game.Echiquier;
+import game.Coordonnee;
+import game.Echiquier;
 
 public abstract class Piece extends Coordonnee{
 

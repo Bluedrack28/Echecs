@@ -1,21 +1,21 @@
-package Main;
+package main;
 
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import Exception.NoPieceException;
-import Game.Coordonnee;
-import Game.Echiquier;
-import Game.Echiquier;
-import Game.Player;
-import Pieces.Cheval;
-import Pieces.Fou;
-import Pieces.Piece;
-import Pieces.Pion;
-import Pieces.Reine;
-import Pieces.Roi;
-import Pieces.Tour;
+
+import exception.NoPieceException;
+import game.Coordonnee;
+import game.Echiquier;
+import game.Player;
+import pieces.Cheval;
+import pieces.Fou;
+import pieces.Piece;
+import pieces.Pion;
+import pieces.Reine;
+import pieces.Roi;
+import pieces.Tour;
 
 public class Main {
 

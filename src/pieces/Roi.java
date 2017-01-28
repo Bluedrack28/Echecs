@@ -1,9 +1,9 @@
-package Pieces;
+package pieces;
 
 import java.util.ArrayList;
 
-import Game.Coordonnee;
-import Game.Echiquier;
+import game.Coordonnee;
+import game.Echiquier;
 
 public class Roi extends Piece {
 
@@ -15,9 +15,9 @@ public class Roi extends Piece {
 	public String getURLImage() {
 		
 		if (this.getCamp())
-			return "pieces/bRoi.png";
+			return "src/pieces/images/bRoi.png";
 		else
-			return "pieces/nRoi.png";
+			return "src/pieces/images/nRoi.png";
 	}
 
 	@Override

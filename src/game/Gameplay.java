@@ -1,12 +1,12 @@
-package Game;
+package game;
 
 import java.awt.MouseInfo;
 
-import Exception.NoPieceException;
-import Main.Panel;
-import Pieces.Piece;
-import Pieces.Pieces;
-import Pieces.Roi;
+import exception.NoPieceException;
+import main.Panel;
+import pieces.Piece;
+import pieces.Pieces;
+import pieces.Roi;
 
 public class Gameplay{
 	

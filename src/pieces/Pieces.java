@@ -1,4 +1,4 @@
-package Pieces;
+package pieces;
 
 public class Pieces {
 	public static final boolean BLANC = true;

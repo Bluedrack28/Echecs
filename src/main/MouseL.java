@@ -1,13 +1,13 @@
-package Main;
+package main;
 
 import java.awt.Component;
 import java.awt.MouseInfo;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import Game.Echiquier;
-import Game.Gameplay;
-import Game.Player;
+import game.Echiquier;
+import game.Gameplay;
+import game.Player;
 
 public class MouseL implements MouseListener{
 	public boolean click;
