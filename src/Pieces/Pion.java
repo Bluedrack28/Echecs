@@ -24,16 +24,20 @@ public class Pion extends Piece{
 	public ArrayList<Coordonnee> possibleMove(Echiquier echec) {
 		// TODO Auto-generated method stub
 		ArrayList<Coordonnee> coor = new ArrayList<Coordonnee>();
-	
+		
 		if(echec.getCamp() == this.getCamp()){
-
-			if(this.y==6){
+			if(this.y == 0){
+				return coor;
+			}
+			if(this.y == 6){
 				coor.add(new Coordonnee(this.x,this.y - 2));	
 			}
 			coor.add(new Coordonnee(this.x,this.y - 1));
 		}else{
-			
-			if(this.y==1){
+			if(this.y == 7){
+				return coor;
+			}
+			if(this.y == 1){
 				coor.add(new Coordonnee(this.x,this.y + 2));
 			}
 			coor.add(new Coordonnee(this.x,this.y + 1));

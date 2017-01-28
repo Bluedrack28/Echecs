@@ -4,9 +4,6 @@ import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-
-import com.sun.glass.events.MouseEvent;
-
 import Exception.NoPieceException;
 import Game.Coordonnee;
 import Game.Echiquier;
